@@ -94,8 +94,5 @@ class LinkedList {
   }
 }
 
-// const linkedList = LinkedList.create([1,2,3]);
-// linkedList.unshift("Julius");
-
 
 module.exports = LinkedList;

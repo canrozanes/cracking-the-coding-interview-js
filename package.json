@@ -1,17 +1,16 @@
 {
   "name": "cracking-the-coding-interview",
   "version": "1.0.0",
-  "description": "",
+  "description": "An attempt to solve all question in Cracking the Coding Interview using JavaScirpt",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
   },
   "keywords": [],
-  "author": "",
+  "author": "Can Rozanes",
   "license": "ISC",
-  "dependencies": {
-    "yallist": "^4.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "jest": "^26.0.1"
   }
