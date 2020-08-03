@@ -1,50 +1,51 @@
-class Node { 
-  constructor(value){ 
-    this.value = value; 
-    this.next = null
-  } 
-} 
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
 
 class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
   }
+
   static create(array = []) {
-    const newList = new LinkedList()
-    for(let i=0; i < array.length; i++){
-      newList.append(array[i])
+    const newList = new LinkedList();
+    for (let i = 0; i < array.length; i++) {
+      newList.append(array[i]);
     }
-    return newList
+    return newList;
   }
 
   append(value) {
-    let node = new Node(value);
+    const node = new Node(value);
     // if list is empty
     if (!this.head) {
       this.head = node;
       this.tail = node;
-    }
-    else {
+    } else {
       this.tail.next = node;
       this.tail = node;
     }
-    return this
+    return this;
   }
+
   length() {
     let temp = this.head;
     let countOfNodes = 0;
 
-    while(temp){
+    while (temp) {
       temp = temp.next;
-      countOfNodes++
+      countOfNodes += 1;
     }
     return countOfNodes;
   }
 
   // insert one item to array
   unshift(value) {
-    let node = new Node(value);
+    const node = new Node(value);
 
     if (!this.head) {
       this.head = node;
@@ -55,35 +56,32 @@ class LinkedList {
     }
   }
 
-  // this method is only for testing and has an O(n) look-up, if you think you need this, use an array instead.
-  _getNodeByIndex(index){
+  // this method is only for testing and has an O(n) look-up,
+  // if you think you need this, use an array instead.
+  _getNodeByIndex(index) {
     let temp = this.head;
     let countOfNodes = 0;
 
-    if (temp === null){
-      return
+    if (temp === null) {
+      return;
     }
     let runner = temp.next;
-    while(runner){
-      if (countOfNodes === index){
+    while (runner) {
+      if (countOfNodes === index) {
         return temp;
       }
       temp = runner;
       runner = runner.next;
-      countOfNodes++
+      countOfNodes += 1;
     }
     // check for the last node
-    if (countOfNodes === index){
-      return temp
-    }
-    // if length of array less than index
-    if (countOfNodes < index){
-      return
+    if (countOfNodes === index) {
+      return temp;
     }
   }
 
   toArray() {
-    let array = [];
+    const array = [];
     let cur = this.head;
     while (cur) {
       array.push(cur.value);
@@ -93,6 +91,5 @@ class LinkedList {
     return array;
   }
 }
-
 
 module.exports = LinkedList;

@@ -1,24 +1,23 @@
-const { 
-  isUnique, 
-  isUniqueWithReduce, 
-  isUniqueNaive 
+const {
+  isUnique,
+  isUniqueWithReduce,
+  isUniqueNaive,
 } = require('../1-isUnique');
 
 const test = (fn) => {
-  describe(fn.name, ()=>{
-    it("Should return true if all characters in a string are unique", () => {
-      expect(fn('abcd')).toBe(true)
-      expect(fn('mdjq')).toBe(true)
-      expect(fn('abcdefghijklmnopqrstuvwxyz')).toBe(true)
-    })
-    it("Should return false if there are repeating characters", () => {
-      expect(fn('abccd')).toBe(false)
-      expect(fn('bhjjb')).toBe(false)
-    })
-  })
-}
+  describe(fn.name, () => {
+    it('Should return true if all characters in a string are unique', () => {
+      expect(fn('abcd')).toBe(true);
+      expect(fn('mdjq')).toBe(true);
+      expect(fn('abcdefghijklmnopqrstuvwxyz')).toBe(true);
+    });
+    it('Should return false if there are repeating characters', () => {
+      expect(fn('abccd')).toBe(false);
+      expect(fn('bhjjb')).toBe(false);
+    });
+  });
+};
 
-test(isUnique)
-test(isUniqueWithReduce)
-test(isUniqueNaive)
-
+test(isUnique);
+test(isUniqueWithReduce);
+test(isUniqueNaive);

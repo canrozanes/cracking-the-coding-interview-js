@@ -2,18 +2,18 @@ const kThToLast = (head, k) => {
   let runner = head;
   let walker = head;
   let hopCount = 0;
-  while(runner && hopCount < k){
+  while (runner && hopCount < k) {
     runner = runner.next;
-    hopCount++;
+    hopCount += 1;
   }
-  if (hopCount !== k){
-    throw new Error("Length of list can't be less than k")
+  if (hopCount !== k) {
+    throw new Error("Length of list can't be less than k");
   }
-  while(runner.next){
+  while (runner.next) {
     runner = runner.next;
     walker = walker.next;
   }
   return walker.value;
-}
+};
 
-module.exports = { kThToLast }
+module.exports = { kThToLast };

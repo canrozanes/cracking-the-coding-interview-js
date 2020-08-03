@@ -5,13 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "lint": "eslint --ignore-path .gitignore ."
   },
   "keywords": [],
   "author": "Can Rozanes",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.20.0",
     "jest": "^26.0.1"
   }
 }
