@@ -10,8 +10,13 @@
   "keywords": [],
   "author": "Can Rozanes",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "eslint-plugin-jest": "^23.20.0"
+  },
   "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
     "jest": "^26.0.1"
   }
 }

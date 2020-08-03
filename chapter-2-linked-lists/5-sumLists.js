@@ -2,19 +2,18 @@ const convertListToInt = (list) => {
   let num = 0;
   let digit = 1;
   let current = list.head;
-  while(current){
-    num = num + digit * current.value;
-    digit = digit * 10;
+  while (current) {
+    num += digit * current.value;
+    digit *= 10;
     current = current.next;
   }
-  return num
-}
+  return num;
+};
 
 const sumList = (list1, list2) => {
   const num1 = convertListToInt(list1);
-  const num2 = convertListToInt(list2)
+  const num2 = convertListToInt(list2);
   return num1 + num2;
-}
+};
 
-
-module.exports = { sumList }
+module.exports = { sumList };

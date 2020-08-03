@@ -1,4 +1,4 @@
-// - push all values found in the linked-list to a stack. 
+// - push all values found in the linked-list to a stack.
 // - Traverse the link list again and in each .next, pop an element from the stack.
 // - if at any point if linked-list value does not equal popped stack value, return false.
 // - return true
@@ -18,13 +18,13 @@ const isPalindrome = (list) => {
   currentNode = list.head;
   while (stack.length > 0) {
     const lastItem = stack.pop();
-    if(lastItem !==currentNode.value){
-      return false
+    if (lastItem !== currentNode.value) {
+      return false;
     }
     currentNode = currentNode.next;
   }
 
-  return true
-}
+  return true;
+};
 
-module.exports = { isPalindrome }
+module.exports = { isPalindrome };

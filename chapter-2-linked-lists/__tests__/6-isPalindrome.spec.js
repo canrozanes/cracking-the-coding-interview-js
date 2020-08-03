@@ -4,45 +4,40 @@ const { isPalindrome } = require('../6-isPalindrome');
 describe('sumList', () => {
   const testCases = [
     {
-      word: "kayak",
-      isPalindrome: true 
+      word: 'kayak',
+      isPalindrome: true,
     },
     {
-<<<<<<< Updated upstream
-      word: "reviver",
-      isPalindrome: true
-=======
       word: 'esse',
       isPalindrome: true,
     },
     {
       word: 'reviver',
       isPalindrome: true,
->>>>>>> Stashed changes
     },
     {
       word: 'I am not a Palindrome',
-      isPalindrome: false
+      isPalindrome: false,
     },
     {
-      word: "racecar",
+      word: 'racecar',
       isPalindrome: true,
     },
     {
-      word: "a man a canal",
+      word: 'a man a canal',
       isPalindrome: false,
     },
     {
       word: 'a',
       isPalindrome: true,
-    }
+    },
   ];
   testCases.forEach(({ word, isPalindrome: isPalindromeResult }) => {
-    it(`should properly confirm that "${word}" ${isPalindromeResult? 'is a Palindrome': 'is not a Palindrome'}`, ()=>{
-      const toList = word => word.split("");
+    it(`should properly confirm that "${word}" ${isPalindromeResult ? 'is a Palindrome' : 'is not a Palindrome'}`, () => {
+      const toList = (wordToSplit) => wordToSplit.split('');
       const list = LinkedList.create(toList(word));
 
-      expect(isPalindrome(list)).toBe(isPalindromeResult)
-    })
-  })
-})
+      expect(isPalindrome(list)).toBe(isPalindromeResult);
+    });
+  });
+});
