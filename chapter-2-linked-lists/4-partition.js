@@ -1,4 +1,4 @@
-const LinkedList = require('./linked-list');
+const LinkedList = require('../data-structures/linked-list');
 
 const partition = (node, value) => {
   const beforeList = LinkedList.create();
@@ -19,8 +19,5 @@ const partition = (node, value) => {
   beforeList.tail = afterList.tail;
   return beforeList;
 };
-
-// const LL = LinkedList.create([8, 5, 1, 3]);
-// console.log(partition(LL.head, 2).toArray())
 
 module.exports = { partition };

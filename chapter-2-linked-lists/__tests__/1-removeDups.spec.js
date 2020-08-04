@@ -1,4 +1,4 @@
-const LinkedList = require('../linked-list');
+const LinkedList = require('../../data-structures/linked-list');
 const { removeDupsNoHash, removeDupsWithHash } = require('../1-removeDups');
 
 const test = (fn) => {

@@ -1,4 +1,4 @@
-const LinkedList = require('../linked-list');
+const LinkedList = require('../../data-structures/linked-list');
 const { sumList } = require('../5-sumLists');
 
 describe('sumList', () => {

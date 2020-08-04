@@ -1,4 +1,4 @@
-const LinkedList = require('../linked-list');
+const LinkedList = require('../../data-structures/linked-list');
 const { kThToLast } = require('../2-kthToLast');
 
 describe('kThToLast', () => {

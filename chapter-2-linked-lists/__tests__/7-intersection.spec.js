@@ -1,4 +1,4 @@
-const LinkedList = require('../linked-list');
+const LinkedList = require('../../data-structures/linked-list');
 const { intersection } = require('../7-intersection');
 
 const connectListsAtIndex = (list1, list2, index) => {

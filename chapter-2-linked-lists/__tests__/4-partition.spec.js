@@ -1,4 +1,4 @@
-const LinkedList = require('../linked-list');
+const LinkedList = require('../../data-structures/linked-list');
 const { partition } = require('../4-partition');
 
 // all nodes less than x come before all nodes greater than or equal to x

@@ -1,4 +1,4 @@
-const LinkedList = require('../linked-list');
+const LinkedList = require('../../data-structures/linked-list');
 const { detectLoop } = require('../8-detectLoop');
 
 describe('intersection', () => {

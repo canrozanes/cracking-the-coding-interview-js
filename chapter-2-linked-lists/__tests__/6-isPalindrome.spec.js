@@ -1,4 +1,4 @@
-const LinkedList = require('../linked-list');
+const LinkedList = require('../../data-structures/linked-list');
 const { isPalindrome } = require('../6-isPalindrome');
 
 describe('sumList', () => {
