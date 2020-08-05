@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "npm run test -- --watch",
+    "test:cov": "jest --collect-coverage",
     "lint": "eslint --ignore-path .gitignore ."
   },
   "keywords": [],
