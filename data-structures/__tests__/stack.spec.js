@@ -6,6 +6,11 @@ describe('stack', () => {
     expect(stack).toHaveProperty('items');
     expect(stack).toHaveProperty('length');
   });
+  it('should create a new queue with items on create(array)', () => {
+    const stack = Stack.create([1, 2, 3, 4]);
+    expect(stack.items).toMatchObject([1, 2, 3, 4]);
+    expect(stack.length()).toBe(4);
+  });
   it('should return true when the stack is empty and false if it has elements on calling isEmpty() ', () => {
     const stack = Stack.create();
     expect(stack.isEmpty()).toBe(true);

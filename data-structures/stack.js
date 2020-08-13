@@ -1,12 +1,12 @@
 // A stack can easily be implement using an array in Javascript
 // because Array data type already has .push() and .pop() operations implemented.
 class Stack {
-  constructor() {
-    this.items = [];
+  constructor(item) {
+    this.items = item || [];
   }
 
-  static create() {
-    return new Stack();
+  static create(item) {
+    return new Stack(item);
   }
 
   length() {
