@@ -43,7 +43,7 @@ class LinkedList {
     return countOfNodes;
   }
 
-  // insert one item to array
+  // insert one item to the beginning of the list
   unshift(value) {
     const node = new Node(value);
 
@@ -54,6 +54,16 @@ class LinkedList {
       node.next = this.head;
       this.head = node;
     }
+  }
+
+  // remove one item from the beginning of the list
+  shift() {
+    if (!this.head) {
+      return null;
+    }
+    const nodeToRemove = this.head;
+    this.head = this.head.next;
+    return nodeToRemove.value;
   }
 
   // this method is only for testing and has an O(n) look-up,

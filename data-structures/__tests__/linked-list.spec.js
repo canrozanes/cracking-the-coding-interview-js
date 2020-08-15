@@ -69,4 +69,20 @@ describe('linkedList', () => {
     const longLinkedList = linkedList.create(['red', 'orange', 'yellow', 'green', 'blue', 'violet']);
     expect(longLinkedList.toArray()).toMatchObject(['red', 'orange', 'yellow', 'green', 'blue', 'violet']);
   });
+  it('should return null on calling unshift() when the list has no values', () => {
+    const LinkedList = linkedList.create();
+    const poppedValue = LinkedList.shift();
+    expect(poppedValue).toBe(null);
+  });
+  it('should return the first element on calling unshift() when the list has values', () => {
+    const LinkedList = linkedList.create(['a', 'b', 'c', 'd']);
+    const poppedValue0 = LinkedList.shift();
+    const poppedValue1 = LinkedList.shift();
+    const poppedValue2 = LinkedList.shift();
+    const poppedValue3 = LinkedList.shift();
+    expect(poppedValue0).toBe('a');
+    expect(poppedValue1).toBe('b');
+    expect(poppedValue2).toBe('c');
+    expect(poppedValue3).toBe('d');
+  });
 });
