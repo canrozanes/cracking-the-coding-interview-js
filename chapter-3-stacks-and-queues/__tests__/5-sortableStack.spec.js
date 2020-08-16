@@ -1,7 +1,7 @@
 const SortableStack = require('../5-sortableStack');
 
 describe('MyQueue', () => {
-  it('should create a new SetOfStacks on calling create(length) with maxIndividualLength === length', () => {
+  it('should create a new SortableStack on calling create(length) with maxIndividualLength === length', () => {
     const sortableStack = SortableStack.create();
     expect(sortableStack).toHaveProperty('sort');
   });
