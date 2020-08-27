@@ -4,6 +4,7 @@
 module.exports = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
+  preset: 'ts-jest',
 
   // Stop running tests after `n` failures
   // bail: 0,
@@ -74,7 +75,7 @@ module.exports = {
 
   // An array of file extensions your modules use
   moduleFileExtensions: [
-    'js',
+    'js','ts'
   ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
