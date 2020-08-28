@@ -11,13 +11,14 @@ class Graph<T> {
     return this._nodes;
   }
 
-  addNode(name: string, value?: T): Node<T> | void {
+  addNode(name: string, value?: T): Node<T> {
     const hasNode = this.nodes.filter((node) => node.name === name).length > 0;
     if (!hasNode) {
       const newNode = new Node(name, value);
       this.nodes.push(newNode);
       return newNode;
     }
+    return this.getNode(name);
   }
 
   hasNode(name: string) : boolean {

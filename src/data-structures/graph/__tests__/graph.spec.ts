@@ -20,6 +20,13 @@ describe('Graph node', () => {
     expect(graph.nodes).toHaveLength(nodes.length);
     expect(graph.hasNode('A')).toBe(true);
   });
+  it('should return the original node if node already exists', () => {
+    const nodes = ['A', 'B', 'C', 'D', 'E', 'F'];
+    const graph = initializeGraph(nodes);
+    const nodeToAdd = graph.addNode('A');
+    const existingNode = graph.getNode('A');
+    expect(nodeToAdd).toBe(existingNode);
+  });
   it('should properly return true on hasNode() if node exists, otherwise false', () => {
     const nodes = ['A', 'B', 'C'];
     const graph = initializeGraph(nodes);
