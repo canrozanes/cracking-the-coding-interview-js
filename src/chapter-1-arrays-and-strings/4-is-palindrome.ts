@@ -1,4 +1,4 @@
-const palindrome = (input) => {
+const isPalindrome = (input: string): boolean => {
   const string = input.toLowerCase().split(' ').join('');
   const len = string.length;
   for (let i = 0; i < len / 2; i++) {
@@ -9,6 +9,4 @@ const palindrome = (input) => {
   return true;
 };
 
-module.exports = { palindrome };
-// console.log(palindrome('Taco cat'), 'true');
-// console.log(palindrome('Tact boa'), 'false');
+export default isPalindrome;
