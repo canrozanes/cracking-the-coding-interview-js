@@ -1,6 +1,4 @@
-const urlify = (string, len) => string.trim().split(' ').join('%20').substring(0, len);
-
-const urlifyNaive = (string) => {
+const urlifyNaive = (string: string) : string => {
   const charArray = string.trim().split('');
 
   const newArray = [];
@@ -15,4 +13,6 @@ const urlifyNaive = (string) => {
   return newArray.join('');
 };
 
-module.exports = { urlify, urlifyNaive };
+const urlify = (string: string) : string => string.trim().split(' ').join('%20');
+
+export { urlify, urlifyNaive };
