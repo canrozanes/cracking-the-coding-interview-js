@@ -1,4 +1,4 @@
-const { rotateMatrix } = require('../7-rotateMatrix');
+import rotateMatrix from '../7-rotate-matrix';
 
 describe('Rotate Matrix', () => {
   it('should properly rotate matrix', () => {

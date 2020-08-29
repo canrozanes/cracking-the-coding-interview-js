@@ -1,4 +1,4 @@
-const { stringCompression } = require('../6-stringCompression');
+import stringCompression from '../6-string-compression';
 
 describe('String Compression Algorithm', () => {
   it('should properly compress string', () => {

@@ -1,8 +1,8 @@
-const {
+import {
   isUnique,
   isUniqueWithReduce,
   isUniqueNaive,
-} = require('../1-isUnique');
+} from '../1-is-unique';
 
 const test = (fn) => {
   describe(fn.name, () => {

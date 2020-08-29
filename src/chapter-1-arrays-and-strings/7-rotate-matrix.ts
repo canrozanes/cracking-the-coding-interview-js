@@ -1,6 +1,6 @@
 // heavily influenced by Nick White's explanation at:
 // https://www.youtube.com/watch?v=SA867FvqHrM
-const rotateMatrix = (matrix) => {
+const rotateMatrix = (matrix: number[][]): number[][] => {
   const n = matrix.length;
 
   // loops through rows
@@ -24,4 +24,4 @@ const rotateMatrix = (matrix) => {
   return matrix;
 };
 
-module.exports = { rotateMatrix };
+export default rotateMatrix;

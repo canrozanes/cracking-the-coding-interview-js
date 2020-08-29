@@ -1,10 +1,9 @@
-const zeroMatrix = (matrix) => {
+const zeroMatrix = (matrix: number[][]): number[][] => {
   const numRows = matrix.length;
-  const colRows = matrix[0].length;
-
   if (numRows === 0) {
     return matrix;
   }
+  const colRows = matrix[0].length;
 
   const setRowsAndColumnsToZero = (rowIndex, colIndex) => {
     for (let i = 0; i < numRows; i++) {
@@ -31,4 +30,4 @@ const zeroMatrix = (matrix) => {
   return matrix;
 };
 
-module.exports = { zeroMatrix };
+export default zeroMatrix;

@@ -1,6 +1,6 @@
-const stringCompression = (string) => {
+const stringCompression = (string: string) :string => {
   // if there are no repeated strings, return the original
-  if (string.length === [...new Set(string.split(''))].length) {
+  if (string.length === Array.from(new Set(string.split(''))).length) {
     return string;
   }
   const output = [];
@@ -20,4 +20,4 @@ const stringCompression = (string) => {
   return output.join('');
 };
 
-module.exports = { stringCompression };
+export default stringCompression;

@@ -1,4 +1,4 @@
-const isUniqueWithReduce = (string) => {
+const isUniqueWithReduce = (string: string) : boolean => {
   const charCounts = string.split('').reduce((acc, curr) => {
     if (curr in acc) {
       acc[curr] = acc[curr] + 1;
@@ -16,7 +16,7 @@ const isUniqueWithReduce = (string) => {
   return true;
 };
 
-const isUniqueNaive = (string) => {
+const isUniqueNaive = (string: string) : boolean => {
   for (let i = 0; i < string.length; i++) {
     for (let j = i + 1; j < string.length; j++) {
       if (string[i] === string[j]) {
@@ -27,7 +27,7 @@ const isUniqueNaive = (string) => {
   return true;
 };
 
-const isUnique = (string) => {
+const isUnique = (string: string) : boolean => {
   const charCounts = {};
   for (let i = 0; i < string.length; i++) {
     if (!(string[i] in charCounts)) {
@@ -39,7 +39,7 @@ const isUnique = (string) => {
   return true;
 };
 
-module.exports = {
+export {
   isUnique,
   isUniqueWithReduce,
   isUniqueNaive,

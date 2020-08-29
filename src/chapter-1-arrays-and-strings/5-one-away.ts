@@ -1,6 +1,6 @@
 // this solution was heavily influenced by
 // https://www.geeksforgeeks.org/check-if-two-given-strings-are-at-edit-distance-one/
-const oneAway = (s1, s2) => {
+const oneAway = (s1: string, s2: string): boolean => {
   if (Math.abs(s1.length - s2.length) > 1) {
     return false;
   }
@@ -16,8 +16,9 @@ const oneAway = (s1, s2) => {
       }
       // If length of one of the strings is more, only possible edit is to remove a character
       if (s1.length > s2.length) {
+        console.log(true);
         i += 1;
-      } else if (s2.length < s1.length) {
+      } else if (s1.length < s2.length) {
         j += 1;
       } else {
         i += 1;
@@ -35,4 +36,6 @@ const oneAway = (s1, s2) => {
   return countOfEdits <= 1;
 };
 
-module.exports = { oneAway };
+console.log(oneAway('aabb', 'aaabb'));
+
+export default oneAway;
