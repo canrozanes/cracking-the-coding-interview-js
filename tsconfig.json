@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "./built",
     "allowJs": true,
-    "target": "ESNext",
+    "target": "es5",
     "esModuleInterop": true,
     "moduleResolution": "node"
   },
