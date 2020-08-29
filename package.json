@@ -7,7 +7,8 @@
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "test:cov": "jest --collect-coverage",
-    "lint": "eslint --ignore-path .gitignore ."
+    "lint": "eslint --ignore-path .gitignore .",
+    "build": "rm -rf built/ && tsc"
   },
   "keywords": [],
   "author": "Can Rozanes",
