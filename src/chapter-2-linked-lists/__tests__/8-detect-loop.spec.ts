@@ -1,5 +1,5 @@
-const LinkedList = require('../../data-structures/linked-list');
-const { detectLoop } = require('../8-detectLoop');
+import LinkedList from '../../data-structures/linked-list';
+import detectLoop from '../8-detect-loop';
 
 describe('intersection', () => {
   const loopTestCases = [

@@ -16,4 +16,4 @@ const kThToLast = (head, k) => {
   return walker.value;
 };
 
-module.exports = { kThToLast };
+export default kThToLast;

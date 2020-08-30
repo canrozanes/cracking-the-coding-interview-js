@@ -1,4 +1,4 @@
-const Queue = require('../queue');
+import Queue from '../queue';
 
 describe('queue', () => {
   it('should create a new queue on calling create()', () => {

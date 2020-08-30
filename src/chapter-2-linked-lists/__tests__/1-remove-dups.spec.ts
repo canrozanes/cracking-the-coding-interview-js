@@ -1,5 +1,5 @@
-const LinkedList = require('../../data-structures/linked-list');
-const { removeDupsNoHash, removeDupsWithHash } = require('../1-removeDups');
+import LinkedList from '../../data-structures/linked-list';
+import { removeDupsNoHash, removeDupsWithHash } from '../1-remove-dups';
 
 const test = (fn) => {
   describe(fn.name, () => {

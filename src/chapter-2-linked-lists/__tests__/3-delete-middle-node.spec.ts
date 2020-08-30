@@ -1,5 +1,5 @@
-const LinkedList = require('../../data-structures/linked-list');
-const { deleteMiddleNode } = require('../3-deleteMiddleNode');
+import LinkedList from '../../data-structures/linked-list';
+import deleteMiddleNode from '../3-delete-middle-node';
 
 describe('deleteMiddleNode', () => {
   const testCases = [

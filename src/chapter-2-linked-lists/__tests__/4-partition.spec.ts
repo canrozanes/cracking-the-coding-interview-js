@@ -1,10 +1,9 @@
-const LinkedList = require('../../data-structures/linked-list');
-const { partition } = require('../4-partition');
+import LinkedList from '../../data-structures/linked-list';
+import partition from '../4-partition';
 
 // all nodes less than x come before all nodes greater than or equal to x
 describe('partition', () => {
   const testCases = [
-
     {
       list: [8, 5, 1, 3],
       value: 2,
@@ -32,7 +31,10 @@ describe('partition', () => {
         const partitionItem = numbers.find((num) => num >= valueOfPartition);
         const indexOfValue = numbers.indexOf(partitionItem);
         const beforeArray = numbers.slice(0, indexOfValue);
-        return beforeArray.reduce((acc, curr) => acc && curr < valueOfPartition, true);
+        return beforeArray.reduce(
+          (acc, curr) => acc && curr < valueOfPartition,
+          true
+        );
       };
 
       expect(isResultPartitionValid(result.toArray(), value)).toBe(true);

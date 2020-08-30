@@ -1,4 +1,4 @@
-const Stack = require('../stack-with-linked-list');
+import Stack from '../stack-with-linked-list';
 
 describe('stack with linked list', () => {
   it('should create a new stack on calling create()', () => {

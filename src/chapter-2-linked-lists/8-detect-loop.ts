@@ -27,4 +27,4 @@ const detectLoop = (list) => {
   return walker;
 };
 
-module.exports = { detectLoop };
+export default detectLoop;

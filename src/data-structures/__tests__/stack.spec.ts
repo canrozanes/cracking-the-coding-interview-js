@@ -1,4 +1,4 @@
-const Stack = require('../stack');
+import Stack from '../stack';
 
 describe('stack', () => {
   it('should create a new stack on calling create()', () => {

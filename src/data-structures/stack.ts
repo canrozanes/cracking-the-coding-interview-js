@@ -1,34 +1,36 @@
 // A stack can easily be implement using an array in Javascript
 // because Array data type already has .push() and .pop() operations implemented.
-class Stack {
-  constructor(item) {
-    this.items = item || [];
+class Stack<T> {
+  items: T[];
+
+  constructor(items: T[]) {
+    this.items = items;
   }
 
-  static create(item) {
-    return new Stack(item);
+  static create<T>(items = []): Stack<T> {
+    return new Stack(items);
   }
 
-  length() {
+  length(): number {
     return this.items.length;
   }
 
-  isEmpty() {
+  isEmpty(): boolean {
     return this.length() === 0;
   }
 
-  push(value) {
+  push(value: T): void {
     this.items.push(value);
   }
 
-  pop() {
+  pop(): null | T {
     if (this.isEmpty()) {
       return null;
     }
     return this.items.pop();
   }
 
-  peek() {
+  peek(): null | T {
     if (this.length() === 0) {
       return null;
     }
@@ -36,4 +38,4 @@ class Stack {
   }
 }
 
-module.exports = Stack;
+export default Stack;

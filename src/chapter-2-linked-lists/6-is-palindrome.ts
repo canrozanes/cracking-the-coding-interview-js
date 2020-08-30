@@ -27,4 +27,4 @@ const isPalindrome = (list) => {
   return true;
 };
 
-module.exports = { isPalindrome };
+export default isPalindrome;

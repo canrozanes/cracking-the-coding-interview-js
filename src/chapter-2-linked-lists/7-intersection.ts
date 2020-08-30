@@ -27,4 +27,4 @@ const intersection = (line1, line2) => {
   return currNodeOnShorter;
 };
 
-module.exports = { intersection };
+export default intersection;

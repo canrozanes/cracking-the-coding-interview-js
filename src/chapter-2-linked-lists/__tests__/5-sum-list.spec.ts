@@ -1,9 +1,8 @@
-const LinkedList = require('../../data-structures/linked-list');
-const { sumList } = require('../5-sumLists');
+import LinkedList from '../../data-structures/linked-list';
+import sumList from '../5-sum-lists';
 
 describe('sumList', () => {
   const testCases = [
-
     {
       num1: 1234,
       num2: 145325,

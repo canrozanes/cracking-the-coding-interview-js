@@ -1,4 +1,4 @@
-const LinkedList = require('../data-structures/linked-list');
+import LinkedList from '../data-structures/linked-list';
 
 const partition = (node, value) => {
   const beforeList = LinkedList.create();
@@ -20,4 +20,4 @@ const partition = (node, value) => {
   return beforeList;
 };
 
-module.exports = { partition };
+export default partition;

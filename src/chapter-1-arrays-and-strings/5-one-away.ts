@@ -16,7 +16,6 @@ const oneAway = (s1: string, s2: string): boolean => {
       }
       // If length of one of the strings is more, only possible edit is to remove a character
       if (s1.length > s2.length) {
-        console.log(true);
         i += 1;
       } else if (s1.length < s2.length) {
         j += 1;
@@ -35,7 +34,5 @@ const oneAway = (s1: string, s2: string): boolean => {
   }
   return countOfEdits <= 1;
 };
-
-console.log(oneAway('aabb', 'aaabb'));
 
 export default oneAway;

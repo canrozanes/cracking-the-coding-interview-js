@@ -1,5 +1,5 @@
-const LinkedList = require('../../data-structures/linked-list');
-const { isPalindrome } = require('../6-isPalindrome');
+import LinkedList from '../../data-structures/linked-list';
+import isPalindrome from '../6-is-palindrome';
 
 describe('sumList', () => {
   const testCases = [
@@ -33,7 +33,9 @@ describe('sumList', () => {
     },
   ];
   testCases.forEach(({ word, isPalindrome: isPalindromeResult }) => {
-    it(`should properly confirm that "${word}" ${isPalindromeResult ? 'is a Palindrome' : 'is not a Palindrome'}`, () => {
+    it(`should properly confirm that "${word}" ${
+      isPalindromeResult ? 'is a Palindrome' : 'is not a Palindrome'
+    }`, () => {
       const toList = (wordToSplit) => wordToSplit.split('');
       const list = LinkedList.create(toList(word));
 

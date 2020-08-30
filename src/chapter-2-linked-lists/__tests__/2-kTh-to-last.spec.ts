@@ -1,5 +1,5 @@
-const LinkedList = require('../../data-structures/linked-list');
-const { kThToLast } = require('../2-kthToLast');
+import LinkedList from '../../data-structures/linked-list';
+import kThToLast from '../2-kth-to-last';
 
 describe('kThToLast', () => {
   const testCases = [
@@ -38,6 +38,8 @@ describe('kThToLast', () => {
   it('should throw an error if k is greater than list length', () => {
     const list = LinkedList.create([1, 2, 3, 4]);
     const k = 10;
-    expect(() => kThToLast(list.head, k)).toThrow("Length of list can't be less than k");
+    expect(() => kThToLast(list.head, k)).toThrow(
+      "Length of list can't be less than k",
+    );
   });
 });

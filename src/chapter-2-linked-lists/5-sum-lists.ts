@@ -16,4 +16,4 @@ const sumList = (list1, list2) => {
   return num1 + num2;
 };
 
-module.exports = { sumList };
+export default sumList;

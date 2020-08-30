@@ -6,4 +6,4 @@ const deleteMiddleNode = (node) => {
   node.next = node.next.next;
 };
 
-module.exports = { deleteMiddleNode };
+export default deleteMiddleNode;

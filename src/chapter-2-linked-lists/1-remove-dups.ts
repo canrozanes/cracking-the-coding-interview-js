@@ -30,7 +30,4 @@ const removeDupsNoHash = (node) => {
   return node.list;
 };
 
-module.exports = {
-  removeDupsNoHash,
-  removeDupsWithHash,
-};
+export { removeDupsNoHash, removeDupsWithHash };

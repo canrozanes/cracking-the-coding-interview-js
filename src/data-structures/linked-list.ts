@@ -1,26 +1,34 @@
-class Node {
-  constructor(value) {
+class Node<T> {
+  value: T;
+
+  next: Node<T>;
+
+  constructor(value: T) {
     this.value = value;
     this.next = null;
   }
 }
 
-class LinkedList {
+class LinkedList<T> {
+  head: Node<T> | null;
+
+  tail: Node<T> | null;
+
   constructor() {
     this.head = null;
     this.tail = null;
   }
 
-  static create(array = []) {
-    const newList = new LinkedList();
+  static create<T>(array = []): LinkedList<T> {
+    const newList = new LinkedList<T>();
     for (let i = 0; i < array.length; i++) {
       newList.append(array[i]);
     }
     return newList;
   }
 
-  append(value) {
-    const node = new Node(value);
+  append(value: T): LinkedList<T> {
+    const node = new Node<T>(value);
     // if list is empty
     if (!this.head) {
       this.head = node;
@@ -32,7 +40,7 @@ class LinkedList {
     return this;
   }
 
-  length() {
+  length(): number {
     let temp = this.head;
     let countOfNodes = 0;
 
@@ -44,8 +52,8 @@ class LinkedList {
   }
 
   // insert one item to the beginning of the list
-  unshift(value) {
-    const node = new Node(value);
+  unshift(value: T) {
+    const node = new Node<T>(value);
 
     if (!this.head) {
       this.head = node;
@@ -57,7 +65,7 @@ class LinkedList {
   }
 
   // remove one item from the beginning of the list
-  shift() {
+  shift(): T | null {
     if (!this.head) {
       return null;
     }
@@ -68,7 +76,7 @@ class LinkedList {
 
   // this method is only for testing and has an O(n) look-up,
   // if you think you need this, use an array instead.
-  _getNodeByIndex(index) {
+  _getNodeByIndex(index: number): Node<T> | undefined {
     let temp = this.head;
     let countOfNodes = 0;
 
@@ -90,7 +98,7 @@ class LinkedList {
     }
   }
 
-  toArray() {
+  toArray(): T[] {
     const array = [];
     let cur = this.head;
     while (cur) {
@@ -102,4 +110,4 @@ class LinkedList {
   }
 }
 
-module.exports = LinkedList;
+export default LinkedList;

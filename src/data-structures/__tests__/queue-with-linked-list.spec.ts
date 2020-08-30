@@ -1,4 +1,4 @@
-const Queue = require('../queue-with-linked-list');
+import Queue from '../queue-with-linked-list';
 
 describe('queue', () => {
   it('should create a new queue on calling create()', () => {

@@ -1,37 +1,39 @@
-class Queue {
+class Queue<T> {
+  items: T[];
+
   constructor() {
     this.items = [];
   }
 
-  static create() {
-    return new Queue();
+  static create<T>() {
+    return new Queue<T>();
   }
 
-  enqueue(item) {
+  enqueue(item: T) {
     this.items.push(item);
   }
 
-  dequeue() {
+  dequeue(): T | null {
     if (this.isEmpty()) {
       return null;
     }
     return this.items.shift();
   }
 
-  peek() {
+  peek(): boolean | T {
     if (this.isEmpty()) {
       return null;
     }
     return this.items[0];
   }
 
-  length() {
+  length(): number {
     return this.items.length;
   }
 
-  isEmpty() {
+  isEmpty(): boolean {
     return this.length() === 0;
   }
 }
 
-module.exports = Queue;
+export default Queue;
