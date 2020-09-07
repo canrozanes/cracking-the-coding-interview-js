@@ -1,4 +1,4 @@
-const MyQueue = require('../4-queueViaStacks');
+import MyQueue from '../4-queue-via-stacks';
 
 describe('MyQueue', () => {
   it('should create a new SetOfStacks on calling create(length) with maxIndividualLength === length', () => {

@@ -1,4 +1,4 @@
-const ThreeInOneStack = require('../1-threeInOne');
+import ThreeInOneStack from '../1-three-in-one';
 
 describe('ThreeInOneStack', () => {
   it('should create a new threeInOneStack on calling create()', () => {

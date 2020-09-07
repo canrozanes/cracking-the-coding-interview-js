@@ -1,6 +1,25 @@
-const Queue = require('../data-structures/queue-with-linked-list');
+import Queue from '../data-structures/queue-with-linked-list';
+
+interface IAnimal {
+  type: string;
+  name: string;
+  id?: number;
+}
+
+interface IDog extends IAnimal {
+  type: 'dog';
+}
+interface ICat extends IAnimal {
+  type: 'cat';
+}
 
 class AnimalShelter {
+  dogs: Queue<IDog>;
+
+  cats: Queue<ICat>;
+
+  id: number;
+
   constructor() {
     this.dogs = new Queue();
     this.cats = new Queue();
@@ -11,28 +30,33 @@ class AnimalShelter {
     return new AnimalShelter();
   }
 
-  isEmpty() {
+  isEmpty(): boolean {
     return this.dogs.length() + this.cats.length() === 0;
   }
 
-  enqueue(animal) {
+  enqueue(animal: IAnimal): void {
     if (animal.type !== 'cat' && animal.type !== 'dog') {
       throw new Error('this shelter only accepts cats and dogs');
     }
-    const animalToPush = {
-      id: this.id,
-      type: animal.type,
-      name: animal.name,
-    };
-    if (animalToPush.type === 'dog') {
-      this.dogs.enqueue(animalToPush);
+    if (animal.type === 'dog') {
+      const newDog: IDog = {
+        id: this.id,
+        type: 'dog',
+        name: animal.name,
+      };
+      this.dogs.enqueue(newDog);
     } else {
-      this.cats.enqueue(animalToPush);
+      const newCat: ICat = {
+        id: this.id,
+        type: 'cat',
+        name: animal.name,
+      };
+      this.cats.enqueue(newCat);
     }
     this.id += 1;
   }
 
-  dequeueAny() {
+  dequeueAny(): ICat | IDog {
     if (this.isEmpty()) {
       return null;
     }
@@ -45,14 +69,14 @@ class AnimalShelter {
     return this.dogs.dequeue();
   }
 
-  dequeueCat() {
+  dequeueCat(): ICat {
     if (this.cats.isEmpty()) {
       return null;
     }
     return this.cats.dequeue();
   }
 
-  dequeueDog() {
+  dequeueDog(): IDog {
     if (this.dogs.isEmpty()) {
       return null;
     }
@@ -60,4 +84,4 @@ class AnimalShelter {
   }
 }
 
-module.exports = { AnimalShelter };
+export default AnimalShelter;

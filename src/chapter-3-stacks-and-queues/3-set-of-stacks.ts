@@ -1,7 +1,11 @@
-const Stack = require('../data-structures/stack');
+import Stack from '../data-structures/stack';
 
-class SetOfStacks {
-  constructor(maxIndividualLength) {
+class SetOfStacks<T> {
+  stackOfStacks: Stack<Stack<T>>;
+
+  maxIndividualLength: number;
+
+  constructor(maxIndividualLength: number) {
     this.stackOfStacks = Stack.create();
     this.maxIndividualLength = maxIndividualLength;
   }
@@ -13,10 +17,10 @@ class SetOfStacks {
     return new SetOfStacks(maxIndividualLength);
   }
 
-  push(value) {
+  push(value: T) {
     const currentStack = this.stackOfStacks.peek();
     if (this.isEmpty() || currentStack.length() === this.maxIndividualLength) {
-      const newStack = Stack.create();
+      const newStack = new Stack<T>();
       newStack.push(value);
       this.stackOfStacks.push(newStack);
     } else {
@@ -24,7 +28,7 @@ class SetOfStacks {
     }
   }
 
-  pop() {
+  pop(): null | T {
     if (this.isEmpty()) {
       return null;
     }
@@ -35,17 +39,19 @@ class SetOfStacks {
     return currentStack.pop();
   }
 
-  length() {
+  length(): number {
     if (this.stackOfStacks.length() === 0) {
       return 0;
     }
-    return (this.stackOfStacks.length() - 1) * this.maxIndividualLength
-      + this.stackOfStacks.peek().length();
+    return (
+      (this.stackOfStacks.length() - 1) * this.maxIndividualLength +
+      this.stackOfStacks.peek().length()
+    );
   }
 
-  isEmpty() {
+  isEmpty(): boolean {
     return this.length() === 0;
   }
 }
 
-module.exports = SetOfStacks;
+export default SetOfStacks;

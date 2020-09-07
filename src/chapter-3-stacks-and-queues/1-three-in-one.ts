@@ -2,7 +2,13 @@
 
 // A stack can easily be implement using an array in Javascript
 // because Array data type already has .push() and .pop() operations implemented.
-class ThreeInOneStack {
+class ThreeInOneStack<T> {
+  items: T[];
+
+  secondBottomIndex: number;
+
+  secondTopIndex: number;
+
   constructor() {
     this.items = [];
     this.secondBottomIndex = 0;
@@ -13,46 +19,46 @@ class ThreeInOneStack {
     return new ThreeInOneStack();
   }
 
-  length1() {
+  length1(): number {
     return this.secondBottomIndex;
   }
 
-  length2() {
+  length2(): number {
     return this.secondTopIndex - this.secondBottomIndex;
   }
 
-  length3() {
+  length3(): number {
     return this.items.length - this.secondTopIndex;
   }
 
-  isEmpty1() {
+  isEmpty1(): boolean {
     return this.length1() === 0;
   }
 
-  isEmpty2() {
+  isEmpty2(): boolean {
     return this.length2() === 0;
   }
 
-  isEmpty3() {
+  isEmpty3(): boolean {
     return this.length3() === 0;
   }
 
-  push1(value) {
+  push1(value: T): void {
     this.items.unshift(value);
     this.secondBottomIndex += 1;
     this.secondTopIndex += 1;
   }
 
-  push2(value) {
+  push2(value: T): void {
     this.items.splice(this.secondTopIndex, 0, value);
     this.secondTopIndex += 1;
   }
 
-  push3(value) {
+  push3(value: T): void {
     this.items.push(value);
   }
 
-  pop1() {
+  pop1(): T | null {
     if (this.isEmpty1()) {
       return null;
     }
@@ -63,7 +69,7 @@ class ThreeInOneStack {
     return poppedItem;
   }
 
-  pop2() {
+  pop2(): T | null {
     if (this.isEmpty2()) {
       return null;
     }
@@ -73,26 +79,24 @@ class ThreeInOneStack {
     return itemToPop;
   }
 
-  pop3() {
+  pop3(): T | null {
     if (this.isEmpty3()) {
       return null;
     }
     return this.items.pop();
   }
 
-  peek1() {
+  peek1(): T | null {
     return this.isEmpty1() ? null : this.items[0];
   }
 
-  peek2() {
+  peek2(): T | null {
     return this.isEmpty2() ? null : this.items[this.secondTopIndex - 1];
   }
 
-  peek3() {
-    return this.isEmpty3()
-      ? null
-      : this.items[this.items.length - 1];
+  peek3(): T | null {
+    return this.isEmpty3() ? null : this.items[this.items.length - 1];
   }
 }
 
-module.exports = ThreeInOneStack;
+export default ThreeInOneStack;

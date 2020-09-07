@@ -1,24 +1,21 @@
-const Stack = require('../data-structures/stack');
+import Stack from '../data-structures/stack';
 
-class MinStack extends Stack {
+class MinStack extends Stack<number> {
+  _min: number;
+
+  _minStack: Stack<number>;
+
   constructor() {
     super();
     this._min = null;
-    this._minStack = new Stack();
+    this._minStack = new Stack<number>();
   }
 
-  static create() {
-    return new MinStack();
-  }
-
-  getMin() {
+  getMin(): number {
     return this._min;
   }
 
-  push(value) {
-    if (typeof value !== 'number') {
-      throw new Error('MinStack only takes numbers');
-    }
+  push(value: number) {
     if (this._min === null || value < this._min) {
       this._min = value;
       this._minStack.push(value);
@@ -26,7 +23,7 @@ class MinStack extends Stack {
     this.items.push(value);
   }
 
-  pop() {
+  pop(): null | number {
     if (this.isEmpty()) {
       return null;
     }
@@ -44,4 +41,4 @@ class MinStack extends Stack {
   }
 }
 
-module.exports = MinStack;
+export default MinStack;

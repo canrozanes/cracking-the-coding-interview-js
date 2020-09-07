@@ -6,17 +6,13 @@ module.exports = {
     commonjs: true,
     jest: true,
   },
-  extends: [
-    'airbnb-base',
-  ],
+  extends: ['airbnb-base', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: [
-    '@typescript-eslint',
-  ],
+  plugins: ['@typescript-eslint'],
   rules: {
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
     'operator-assignment': 'off',

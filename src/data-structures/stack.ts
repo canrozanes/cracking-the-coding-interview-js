@@ -3,12 +3,12 @@
 class Stack<T> {
   items: T[];
 
-  constructor(items: T[]) {
+  constructor(items: T[] = []) {
     this.items = items;
   }
 
-  static create<T>(items = []): Stack<T> {
-    return new Stack(items);
+  static create<T>(items = []) {
+    return new Stack<T>(items);
   }
 
   length(): number {

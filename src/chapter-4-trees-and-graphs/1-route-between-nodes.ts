@@ -3,7 +3,7 @@ import Queue from '../data-structures/queue';
 import Node from '../data-structures/graph/node';
 
 class Graph<T> extends BaseGraph<T> {
-  isRouteBetweenBFS(start: Node<T>, end: Node<T>) : boolean {
+  isRouteBetweenBFS(start: Node<T>, end: Node<T>): boolean {
     const hasStart = this.hasNode(start.name);
     const hasEnd = this.hasNode(end.name);
 
@@ -15,7 +15,7 @@ class Graph<T> extends BaseGraph<T> {
     }
     const visited = new Set<Node<T>>();
 
-    const queue = new Queue();
+    const queue = new Queue<Node<T>>();
     queue.enqueue(start);
     visited.add(start);
 
@@ -24,7 +24,7 @@ class Graph<T> extends BaseGraph<T> {
       const { adjNodes } = node;
       for (let i = 0; i < adjNodes.length; i++) {
         const v = adjNodes[i];
-        if (!(visited.has(v))) {
+        if (!visited.has(v)) {
           if (v === end) {
             return true;
           }
@@ -37,12 +37,16 @@ class Graph<T> extends BaseGraph<T> {
     return false;
   }
 
-  isRouteBetweenDFS(start: Node<T>, end: Node<T>) : boolean {
+  isRouteBetweenDFS(start: Node<T>, end: Node<T>): boolean {
     const visited = new Set<Node<T>>();
     return this._isRouteBetweenDFSRecursive(start, end, visited);
   }
 
-  private _isRouteBetweenDFSRecursive(start: Node<T>, end: Node<T>, visited: Set<Node<T>>) {
+  private _isRouteBetweenDFSRecursive(
+    start: Node<T>,
+    end: Node<T>,
+    visited: Set<Node<T>>
+  ) {
     if (start === end) {
       return true;
     }

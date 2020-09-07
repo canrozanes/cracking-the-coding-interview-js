@@ -1,4 +1,4 @@
-const SortableStack = require('../5-sortableStack');
+import SortableStack from '../5-sortable-stack';
 
 describe('MyQueue', () => {
   it('should create a new SortableStack on calling create(length) with maxIndividualLength === length', () => {

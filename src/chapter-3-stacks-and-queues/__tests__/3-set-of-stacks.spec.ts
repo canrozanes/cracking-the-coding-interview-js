@@ -1,4 +1,4 @@
-const SetOfStacks = require('../3-setOfStacks');
+import SetOfStacks from '../3-set-of-stacks';
 
 describe('SetOfStacks', () => {
   it('should create a new SetOfStacks on calling create(length) with maxIndividualLength === length', () => {

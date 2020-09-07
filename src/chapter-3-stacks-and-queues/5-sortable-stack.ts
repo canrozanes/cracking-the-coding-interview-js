@@ -1,15 +1,15 @@
-const Stack = require('../data-structures/stack');
+import Stack from '../data-structures/stack';
 
-class SortableStack extends Stack {
-  static create(items) {
-    return new SortableStack(items);
+class SortableStack<T> extends Stack<T> {
+  static create<T>(items: T[] = []) {
+    return new SortableStack<T>(items);
   }
 
   sort() {
     if (this.isEmpty()) {
       return this;
     }
-    const sortedStack = Stack.create();
+    const sortedStack = Stack.create<T>();
 
     while (!this.isEmpty()) {
       const temp = this.pop();
@@ -26,4 +26,4 @@ class SortableStack extends Stack {
   }
 }
 
-module.exports = SortableStack;
+export default SortableStack;

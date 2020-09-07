@@ -1,6 +1,10 @@
-const Stack = require('../data-structures/stack');
+import Stack from '../data-structures/stack';
 
-class MyQueue {
+class MyQueue<T> {
+  frontStack: Stack<T>;
+
+  backStack: Stack<T>;
+
   constructor() {
     this.frontStack = Stack.create();
     this.backStack = Stack.create();
@@ -10,19 +14,19 @@ class MyQueue {
     return new MyQueue();
   }
 
-  length() {
+  length(): number {
     return this.frontStack.length() + this.backStack.length();
   }
 
-  isEmpty() {
+  isEmpty(): boolean {
     return this.length() === 0;
   }
 
-  enqueue(value) {
+  enqueue(value: T): void {
     this.frontStack.push(value);
   }
 
-  dequeue() {
+  dequeue(): null | T {
     if (this.isEmpty()) {
       return null;
     }
@@ -32,14 +36,14 @@ class MyQueue {
     return this.backStack.pop();
   }
 
-  shiftFromFrontToBack() {
+  shiftFromFrontToBack(): void {
     while (!this.frontStack.isEmpty()) {
       const temp = this.frontStack.pop();
       this.backStack.push(temp);
     }
   }
 
-  peek() {
+  peek(): null | T {
     if (this.isEmpty()) {
       return null;
     }
@@ -50,4 +54,4 @@ class MyQueue {
   }
 }
 
-module.exports = MyQueue;
+export default MyQueue;

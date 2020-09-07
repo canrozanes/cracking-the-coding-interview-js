@@ -1,10 +1,16 @@
-const { AnimalShelter } = require('../6-animalShelter');
+import AnimalShelter from '../6-animal-shelter';
 
 describe('AnimalShelter', () => {
   it('should create a new AnimalShelter on calling create()', () => {
     const animalShelter = AnimalShelter.create();
     expect(animalShelter).toHaveProperty('dogs');
     expect(animalShelter).toHaveProperty('cats');
+  });
+  it('should return null if there are no animals on calling any of the dequeue functions', () => {
+    const animalShelter = AnimalShelter.create();
+    expect(animalShelter.dequeueAny()).toBe(null);
+    expect(animalShelter.dequeueDog()).toBe(null);
+    expect(animalShelter.dequeueCat()).toBe(null);
   });
   it("should throw an error if animal type passed to enqueue() is not 'cat' or 'dog' ", () => {
     const animalShelter = AnimalShelter.create();
@@ -20,12 +26,6 @@ describe('AnimalShelter', () => {
     expect(() => {
       animalShelter.enqueue({ type: 'dog', name: 'mika' });
     }).not.toThrow();
-  });
-  it('should return null if there are no animals on calling any of the dequeue functions', () => {
-    const animalShelter = AnimalShelter.create();
-    expect(animalShelter.dequeueAny()).toBe(null);
-    expect(animalShelter.dequeueDog()).toBe(null);
-    expect(animalShelter.dequeueCat()).toBe(null);
   });
   it('should properly pop a dog on dequeueAny if dog is the first to queue', () => {
     const animalShelter = AnimalShelter.create();
