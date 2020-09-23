@@ -7,8 +7,8 @@ class BinarySearchTree<T> {
     this.root = null;
   }
 
-  insert(data: T) {
-    const newNode = new Node<T>(data);
+  insert(value: T) {
+    const newNode = new Node<T>(value);
 
     if (this.root === null) {
       this.root = newNode;
@@ -18,20 +18,35 @@ class BinarySearchTree<T> {
   }
 
   private insertNode(targetNode: Node<T>, newNode: Node<T>) {
-    if (targetNode.data > newNode.data) {
+    if (targetNode.value > newNode.value) {
       if (targetNode.left === null) {
         targetNode.left = newNode;
       } else {
         this.insertNode(targetNode.left, newNode);
       }
     }
-    if (targetNode.data < newNode.data) {
+    if (targetNode.value < newNode.value) {
       if (targetNode.right === null) {
         targetNode.right = newNode;
       } else {
         this.insertNode(targetNode.right, newNode);
       }
     }
+  }
+
+  private dfsHelper(node: Node<T>, result: T[] = []): T[] {
+    if (node) {
+      this.dfsHelper(node.left, result);
+      if (node.value !== undefined) {
+        result.push(node.value);
+      }
+      this.dfsHelper(node.right, result);
+    }
+    return result;
+  }
+
+  dfs(): T[] {
+    return this.dfsHelper(this.root);
   }
 }
 

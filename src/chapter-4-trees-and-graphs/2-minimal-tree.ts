@@ -1,38 +1,34 @@
 import Node from '../data-structures/binary-search-tree/node';
+import BinarySearchTree from '../data-structures/binary-search-tree';
 
-function constructMinimalTree<T>(array: T[]): Node<T> {
-  const half = Math.floor(array.length / 2);
+class MinimalTree<T> extends BinarySearchTree<T> {
+  // root: Node<T> | null;
 
-  const left = array.slice(0, half);
-  const right = array.slice(half + 1, array.length);
+  static constructFromArray<T>(array = []): MinimalTree<T> {
+    const newTree = new MinimalTree<T>();
 
-  const root = new Node<T>(array[half]);
+    newTree.root = newTree.constructMinimalTree(array);
 
-  if (left.length > 0) {
-    root.left = constructMinimalTree(left);
-  }
-  if (right.length > 0) {
-    root.right = constructMinimalTree(right);
+    return newTree;
   }
 
-  return root;
-}
+  constructMinimalTree(array: T[], root: Node<T> = this.root) {
+    const arrayLength = array.length;
+    const half = Math.floor(arrayLength / 2);
 
-function dfsHelper<T>(node: Node<T>, result: T[]): T[] {
-  if (node) {
-    dfsHelper(node.left, result);
-    if (node.data !== undefined) {
-      result.push(node.data);
+    const left = array.slice(0, half);
+    const right = array.slice(half + 1, array.length);
+
+    root = new Node<T>(array[half]);
+    if (left.length > 0) {
+      root.left = this.constructMinimalTree(left, root.left);
     }
-    dfsHelper(node.right, result);
+    if (right.length > 0) {
+      root.right = this.constructMinimalTree(right, root.right);
+    }
+
+    return root;
   }
-  return result;
 }
 
-export function dfs<T>(node: Node<T>): T[] {
-  const result = [];
-
-  return dfsHelper(node, result);
-}
-
-export default constructMinimalTree;
+export default MinimalTree;
