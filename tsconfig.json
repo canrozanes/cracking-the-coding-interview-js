@@ -4,8 +4,10 @@
     "allowJs": true,
     "target": "es5",
     "esModuleInterop": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "downlevelIteration": true
   },
   "include": ["./src/**/*"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules"]
 }
