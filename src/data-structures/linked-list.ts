@@ -102,7 +102,9 @@ class LinkedList<T> {
     const array = [];
     let cur = this.head;
     while (cur) {
-      array.push(cur.value);
+      if (cur.value !== undefined) {
+        array.push(cur.value);
+      }
       cur = cur.next;
     }
 
