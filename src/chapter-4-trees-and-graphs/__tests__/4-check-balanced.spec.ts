@@ -21,8 +21,6 @@ describe('Check Balanced', () => {
     binaryTree.insert(9);
     binaryTree.insert(10);
 
-    binaryTree.prettyPrint();
-
     expect(binaryTree.isBalanced()).toBe(false);
   });
 });

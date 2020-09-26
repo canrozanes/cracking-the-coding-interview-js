@@ -2,16 +2,16 @@ import LinkedList from '../data-structures/linked-list';
 import Node from '../data-structures/binary-search-tree/node';
 import MinimalTree from './2-minimal-tree';
 
-class BSTWithLisOfDepths<T> extends MinimalTree<T> {
-  static constructFromArray<T>(array = []): BSTWithLisOfDepths<T> {
-    const newTree = new BSTWithLisOfDepths<T>();
+class BSTWithLisOfDepths extends MinimalTree {
+  static constructFromArray(array = []): BSTWithLisOfDepths {
+    const newTree = new BSTWithLisOfDepths();
 
     newTree.root = newTree.constructMinimalTree(array);
 
     return newTree;
   }
 
-  listOfDepths(): LinkedList<T>[] {
+  listOfDepths(): LinkedList<number>[] {
     return this.listOfDepthsHelper(this.root);
   }
 

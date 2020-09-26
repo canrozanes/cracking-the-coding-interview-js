@@ -1,16 +1,16 @@
 import Node from '../data-structures/binary-search-tree/node';
 import MinimalTree from './2-minimal-tree';
 
-class BSTWithCheckBalanced<T> extends MinimalTree<T> {
-  static constructFromArray<T>(array: T[] = []): BSTWithCheckBalanced<T> {
-    const newTree = new BSTWithCheckBalanced<T>();
+class BSTWithCheckBalanced extends MinimalTree {
+  static constructFromArray<T>(array: number[] = []): BSTWithCheckBalanced {
+    const newTree = new BSTWithCheckBalanced();
 
     newTree.root = newTree.constructMinimalTree(array);
 
     return newTree;
   }
 
-  getHeight(root: Node<T>): number {
+  getHeight(root: Node<number>): number {
     if (root !== undefined && root !== null) {
       return (
         Math.max(this.getHeight(root.left), this.getHeight(root.right)) + 1
@@ -19,7 +19,7 @@ class BSTWithCheckBalanced<T> extends MinimalTree<T> {
     return 0;
   }
 
-  isBalanced(root: Node<T> = this.root): boolean {
+  isBalanced(root: Node<number> = this.root): boolean {
     if (!root) {
       return true;
     }
@@ -39,7 +39,7 @@ class BSTWithCheckBalanced<T> extends MinimalTree<T> {
     return this.checkHeight(this.root) !== Number.MIN_SAFE_INTEGER;
   }
 
-  checkHeight(root: Node<T>): number {
+  checkHeight(root: Node<number>): number {
     if (!root) return -1;
 
     const leftHeight = this.checkHeight(root.left);

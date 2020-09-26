@@ -1,25 +1,25 @@
 import Node from '../data-structures/binary-search-tree/node';
 import BinarySearchTree from '../data-structures/binary-search-tree';
 
-class MinimalTree<T> extends BinarySearchTree<T> {
+class MinimalTree extends BinarySearchTree<number> {
   // root: Node<T> | null;
 
-  static constructFromArray<T>(array = []): MinimalTree<T> {
-    const newTree = new MinimalTree<T>();
+  static constructFromArray(array = []): MinimalTree {
+    const newTree = new MinimalTree();
 
     newTree.root = newTree.constructMinimalTree(array);
 
     return newTree;
   }
 
-  constructMinimalTree(array: T[], root: Node<T> = this.root) {
+  constructMinimalTree(array: number[], root: Node<number> = this.root) {
     const arrayLength = array.length;
     const half = Math.floor(arrayLength / 2);
 
     const left = array.slice(0, half);
     const right = array.slice(half + 1, array.length);
 
-    root = new Node<T>(array[half]);
+    root = new Node<number>(array[half]);
     if (left.length > 0) {
       root.left = this.constructMinimalTree(left, root.left);
     }
