@@ -21,6 +21,8 @@ module.exports = {
     'consistent-return': 'off',
     'no-param-reassign': 'off',
     'no-unused-vars': 'off',
+    'no-bitwise': 'off',
+    'prefer-template': 'off',
   },
   ignorePatterns: ['*.config.js', '/built'],
   overrides: [
