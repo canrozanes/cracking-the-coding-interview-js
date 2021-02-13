@@ -14,7 +14,6 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   rules: {
-    'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
     'operator-assignment': 'off',
     'no-underscore-dangle': 'off',
     'max-classes-per-file': ['error', 2],
@@ -23,6 +22,13 @@ module.exports = {
     'no-unused-vars': 'off',
     'no-bitwise': 'off',
     'prefer-template': 'off',
+    'no-plusplus': 'off',
+    'no-continue': 'off',
+    'no-use-before-define': 'off',
+    'import/prefer-default-export': 'off',
+    'prefer-destructuring': 'off',
+    'no-restricted-properties': 'off',
+    'no-useless-return': 'off',
   },
   ignorePatterns: ['*.config.js', '/built'],
   overrides: [

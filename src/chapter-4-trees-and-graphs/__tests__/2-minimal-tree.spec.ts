@@ -13,7 +13,7 @@ describe('constructMinimalTree', () => {
     const nums = [0, 1, 2, 3, 4, 5];
     const tree = MinimalTree.constructFromArray(nums);
 
-    const backToArray = tree.dfs();
+    const backToArray = tree.DFTInOrder();
     expect(nums).toMatchObject(backToArray);
   });
 
@@ -21,21 +21,21 @@ describe('constructMinimalTree', () => {
     const strings = ['a', 'b', 'c', 'd'];
     const tree = MinimalTree.constructFromArray(strings);
 
-    const backToArray = tree.dfs();
+    const backToArray = tree.DFTInOrder();
     expect(strings).toMatchObject(backToArray);
   });
   it('should properly create a minimal tree from an empty array', () => {
     const empty = [];
     const tree = MinimalTree.constructFromArray(empty);
 
-    const backToArray = tree.dfs();
+    const backToArray = tree.DFTInOrder();
     expect(empty).toMatchObject(backToArray);
   });
   it('should properly create a minimal tree from an array of string with length = 1', () => {
     const stringArray = ['abc'];
     const tree = MinimalTree.constructFromArray(stringArray);
 
-    const backToArray = tree.dfs();
+    const backToArray = tree.DFTInOrder();
     expect(stringArray).toMatchObject(backToArray);
   });
   it('should properly create a minimal tree from an array of strings', () => {
@@ -50,13 +50,13 @@ describe('constructMinimalTree', () => {
     ];
     const tree = MinimalTree.constructFromArray(strings);
 
-    const backToArray = tree.dfs();
+    const backToArray = tree.DFTInOrder();
     expect(strings).toMatchObject(backToArray);
   });
   it('should properly create a minimal tree if no array is supplied to the function', () => {
     const tree = MinimalTree.constructFromArray();
 
-    const backToArray = tree.dfs();
+    const backToArray = tree.DFTInOrder();
     expect([]).toMatchObject(backToArray);
   });
 });
